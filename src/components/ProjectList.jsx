@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function ProjectList({ projects, onCreate, onSelect }) {
+export default function ProjectList({ projects, onCreate, onSelect, onDelete }) {
   const [projectName, setProjectName] = useState('');
 
   const handleSubmit = (e) => {
@@ -18,13 +18,25 @@ export default function ProjectList({ projects, onCreate, onSelect }) {
       {/* Lista de Proyectos */}
       <div className="grid gap-4 mb-10">
         {projects.map((project) => (
-          <button
+          <div
             key={project.id}
-            onClick={() => onSelect(project.id)}
-            className="block w-full text-left px-6 py-4 rounded-lg bg-slate-700 hover:bg-slate-600 text-white shadow transition"
+            className="flex items-center justify-between bg-slate-700 hover:bg-slate-600 px-6 py-4 rounded-lg shadow transition"
           >
-            <span className="text-lg font-medium">{project.name}</span>
-          </button>
+            <button
+              onClick={() => onSelect(project.id)}
+              className="text-left text-white font-medium text-lg flex-1"
+            >
+              {project.name}
+            </button>
+            <button
+              onClick={() => {
+                if (confirm("¿Eliminar este proyecto?")) onDelete(project.id);
+              }}
+              className="ml-4 text-red-400 hover:text-red-500 text-sm"
+            >
+              🗑️
+            </button>
+          </div>
         ))}
       </div>
 

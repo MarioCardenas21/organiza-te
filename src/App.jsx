@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ProjectList from './components/ProjectList';
 import Board from './components/Board';
 import Navbar from './components/Navbar';
+import './index.css'; 
 
 export default function App() {
   const [projects, setProjects] = useState([]);
