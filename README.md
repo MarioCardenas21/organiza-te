@@ -1,4 +1,4 @@
-# 🗂️ Organiza.te - App de Proyectos Kanban
+# 🗂️ Organiza.te - App de Proyectos Organiza-te
 
 Organiza.te es una aplicación web tipo Kanban desarrollada con **React** + **Vite** para gestionar proyectos y tareas de forma visual y dinámica. Diseñada con una interfaz moderna y adaptable, permite organizar tus ideas en columnas (como "Por hacer", "En progreso" y "Hecho") y tareas editables.
 
